@@ -1,0 +1,32 @@
+{
+  "name": "mcp-auth-helper",
+  "version": "1.0.0",
+  "description": "Authenticate with remote MCP servers that use OAuth client allowlists",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-auth-helper": "./bin/mcp-auth-helper"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "oauth",
+    "opencode",
+    "figma",
+    "auth"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
