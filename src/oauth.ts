@@ -145,15 +145,20 @@ export async function exchangeCodeForTokens(
   code: string,
   codeVerifier: string,
   clientId: string,
-  redirectUri: string
+  redirectUri: string,
+  clientSecret?: string
 ): Promise<TokenResponse> {
-  const body = new URLSearchParams({
+  const params: Record<string, string> = {
     grant_type: "authorization_code",
     code,
     code_verifier: codeVerifier,
     client_id: clientId,
     redirect_uri: redirectUri,
-  });
+  };
+  if (clientSecret) {
+    params.client_secret = clientSecret;
+  }
+  const body = new URLSearchParams(params);
 
   const result = (await fetchJSON(tokenEndpoint, {
     method: "POST",

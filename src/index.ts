@@ -194,7 +194,8 @@ async function main(): Promise<void> {
     callback.code,
     pkce.codeVerifier,
     client.clientId,
-    redirectUri
+    redirectUri,
+    client.clientSecret
   );
 
   // Step 8: Save tokens
