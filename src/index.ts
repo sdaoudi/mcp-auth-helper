@@ -22,7 +22,7 @@ Options:
   --url <url>             MCP server URL (required)
   --client-name <name>    OAuth client name (default: "Codex")
   --callback-port <port>  Local callback port (default: 19876)
-  --output <path>         Token output path (default: ~/.opencode/mcp-auth.json)
+  --output <path>         Token output path (default: ~/.local/share/opencode/mcp-auth.json)
   --help                  Show this help message`);
   process.exit(1);
 }

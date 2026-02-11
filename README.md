@@ -2,7 +2,7 @@
 
 > ⚠️ **Temporary workaround** — This tool exists because Figma's MCP server currently uses an OAuth client allowlist that doesn't include OpenCode. Once Figma adds OpenCode to their allowlist (tracked in [sst/opencode#5636](https://github.com/sst/opencode/issues/5636) and [sst/opencode#5583](https://github.com/sst/opencode/issues/5583)), this tool will no longer be needed.
 
-A standalone CLI tool that authenticates with remote MCP servers that use OAuth client allowlists (e.g., Figma MCP). Once authenticated, tokens are saved to `~/.opencode/mcp-auth.json` and work with vanilla OpenCode — no fork needed.
+A standalone CLI tool that authenticates with remote MCP servers that use OAuth client allowlists (e.g., Figma MCP). Once authenticated, tokens are saved to `~/.local/share/opencode/mcp-auth.json` and work with vanilla OpenCode — no fork needed.
 
 ## Problem
 
@@ -49,7 +49,7 @@ This will:
 1. Discover OAuth endpoints from the Figma MCP server
 2. Register as a "Codex" OAuth client (which is on Figma's allowlist)
 3. Open your browser to authorize
-4. Save tokens to `~/.opencode/mcp-auth.json`
+4. Save tokens to `~/.local/share/opencode/mcp-auth.json`
 
 After authenticating, add the Figma MCP server to your OpenCode config (`opencode.json`) and it will pick up the saved tokens automatically:
 
@@ -69,7 +69,7 @@ After authenticating, add the Figma MCP server to your OpenCode config (`opencod
 --url <url>             MCP server URL (required)
 --client-name <name>    OAuth client name (default: "Codex")
 --callback-port <port>  Local callback port (default: 19876)
---output <path>         Token output path (default: ~/.opencode/mcp-auth.json)
+--output <path>         Token output path (default: ~/.local/share/opencode/mcp-auth.json)
 ```
 
 ### Multiple Servers
@@ -88,7 +88,7 @@ mcp-auth-helper auth another --url https://another-mcp.example.com/mcp
 3. Initiates an OAuth authorization code flow with PKCE (S256)
 4. Starts a local HTTP server to receive the callback
 5. Exchanges the authorization code for access/refresh tokens
-6. Saves everything to `~/.opencode/mcp-auth.json` in OpenCode's expected format
+6. Saves everything to `~/.local/share/opencode/mcp-auth.json` in OpenCode's expected format
 
 ## Requirements
 

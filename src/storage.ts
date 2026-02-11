@@ -26,8 +26,9 @@ export interface AuthEntry {
 export type AuthFile = Record<string, AuthEntry>;
 
 const DEFAULT_PATH = path.join(
-  process.env.HOME || process.env.USERPROFILE || "~",
-  ".opencode",
+  process.env.XDG_DATA_HOME ||
+    path.join(process.env.HOME || process.env.USERPROFILE || "~", ".local", "share"),
+  "opencode",
   "mcp-auth.json"
 );
 
