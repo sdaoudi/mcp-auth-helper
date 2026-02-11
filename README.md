@@ -8,15 +8,30 @@ Some MCP servers (like Figma) only allow known OAuth clients to register. OpenCo
 
 ## Installation
 
-```bash
-npm install -g mcp-auth-helper
-```
-
-Or use directly with npx:
+### From source (recommended)
 
 ```bash
-npx mcp-auth-helper auth <server-name> --url <mcp-server-url>
+git clone git@github.com:sdaoudi/mcp-auth-helper.git
+cd mcp-auth-helper
+npm install
+npm run build
 ```
+
+Then run it directly:
+
+```bash
+node dist/index.js auth <server-name> --url <mcp-server-url>
+```
+
+Or link it globally so you can use it from anywhere:
+
+```bash
+npm link
+# Now available globally:
+mcp-auth-helper auth <server-name> --url <mcp-server-url>
+```
+
+To unlink later: `npm unlink -g mcp-auth-helper`
 
 ## Usage
 
