@@ -12,37 +12,19 @@ This approach is based on [this workaround commit](https://github.com/connorads/
 
 ## Installation
 
-### From source (recommended)
-
 ```bash
-git clone git@github.com:sdaoudi/mcp-auth-helper.git
+git clone https://github.com/sdaoudi/mcp-auth-helper.git
 cd mcp-auth-helper
 npm install
 npm run build
 ```
-
-Then run it directly:
-
-```bash
-node dist/index.js auth <server-name> --url <mcp-server-url>
-```
-
-Or link it globally so you can use it from anywhere:
-
-```bash
-npm link
-# Now available globally:
-mcp-auth-helper auth <server-name> --url <mcp-server-url>
-```
-
-To unlink later: `npm unlink -g mcp-auth-helper`
 
 ## Usage
 
 ### Figma MCP
 
 ```bash
-mcp-auth-helper auth figma --url https://mcp.figma.com/mcp
+node dist/index.js auth figma --url https://mcp.figma.com/mcp
 ```
 
 This will:
@@ -77,8 +59,8 @@ After authenticating, add the Figma MCP server to your OpenCode config (`opencod
 You can authenticate with multiple MCP servers. Each one is saved as a separate entry in `mcp-auth.json`:
 
 ```bash
-mcp-auth-helper auth figma --url https://mcp.figma.com/mcp
-mcp-auth-helper auth another --url https://another-mcp.example.com/mcp
+node dist/index.js auth figma --url https://mcp.figma.com/mcp
+node dist/index.js auth another --url https://another-mcp.example.com/mcp
 ```
 
 ## How It Works
