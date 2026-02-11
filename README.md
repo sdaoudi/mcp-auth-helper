@@ -33,13 +33,15 @@ This will:
 3. Open your browser to authorize
 4. Save tokens to `~/.local/share/opencode/mcp-auth.json`
 
-After authenticating, add the Figma MCP server to your OpenCode config (`opencode.json`) and it will pick up the saved tokens automatically:
+After authenticating, make sure the Figma MCP server is configured in your `opencode.json` and OpenCode will pick up the saved tokens automatically:
 
 ```json
 {
   "mcp": {
     "figma": {
-      "url": "https://mcp.figma.com/mcp"
+      "type": "remote",
+      "url": "https://mcp.figma.com/mcp",
+      "enabled": true
     }
   }
 }
